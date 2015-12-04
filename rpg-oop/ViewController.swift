@@ -19,8 +19,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var enemyImg: UIImageView!
     
     @IBOutlet weak var chestBtn: UIButton!
+    
+    @IBOutlet weak var attackBtn: UIButton!
+    
     var player: Player!
+    
     var enemy: Enemy!
+    
+    var chestMsg: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +39,7 @@ class ViewController: UIViewController {
         //var kimara = Kimara(hp: 120, attackPwr: 40)
         //var devilWizard = DevilWizard(hp: 60, attackPwr: 5)
         generateRndEnemy()
-        enemyHpLabel.text = "\(enemy.hp) HP"
+        printLabel.text = "\(player.name) is ready to attack!"
         
     }
     
@@ -46,12 +52,59 @@ class ViewController: UIViewController {
             
             default: enemy = Kimara(hp: 150, attackPwr: 40)
         }
+        enemyImg.hidden = false
+        attackBtn.hidden = false
+        enemyHpLabel.text = "\(enemy.hp) HP"
+        printLabel.text = "\(player.name) is ready to attack!"
         
     }
 
     @IBAction func onChestTapped(sender: AnyObject) {
         
+        printLabel.text = chestMsg
+        
+        chestBtn.hidden = true
+        NSTimer.scheduledTimerWithTimeInterval(2.0, target: self, selector: "generateRndEnemy", userInfo: nil, repeats: false)
+       
+        
     }
+    
+    
+    @IBAction func onAttackPressed(sender: AnyObject) {
+//        enemy.attemptAttack(player.attackPwr)
+//        if enemy.hp <= 0 {
+//            enemyImg.hidden = true
+//            chestBtn.hidden = false
+//            enemyHpLabel.text = "0 HP"
+//            attackBtn.hidden = true
+//            printLabel.text = "Open chest to get loot!"
+//            
+//        }else{
+//            printLabel.text = "\(player.name) attacks!"
+//            enemyHpLabel.text = "\(enemy.hp) HP"
+//        }
+        
+        if enemy.attemptAttack(player.attackPwr){
+            printLabel.text = "Attacked \(enemy.type) for \(player.attackPwr) HP"
+            enemyHpLabel.text = "\(enemy.hp) HP"
+        }else{
+            printLabel.text = "Attacked was unsuccessful!"
+        }
+        
+        if let loot = enemy.dropLoot(){
+            player.addItemToInventory(loot)
+            chestMsg = "\(player.name) found \(loot)"
+            chestBtn.hidden = false
+        }
+        
+        if !enemy.isAlive{
+            enemyImg.hidden = true
+            enemyHpLabel.text = "0 HP"
+            attackBtn.hidden = true
+            printLabel.text = "Killed \(enemy.type)"
+        }
+    }
+    
 
 }
 

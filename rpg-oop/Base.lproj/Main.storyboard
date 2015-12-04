@@ -95,10 +95,18 @@
                                 <color key="textColor" red="0.43111944149999998" green="0.84005604619999996" blue="0.3156089949" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attack" translatesAutoresizingMaskIntoConstraints="NO" id="asr-7x-31h">
-                                <rect key="frame" x="278" y="138" width="172" height="90"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ctj-fc-hOz">
+                                <rect key="frame" x="475" y="535" width="59" height="65"/>
                                 <animations/>
-                            </imageView>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="32X-3b-vPN"/>
+                                    <constraint firstAttribute="height" constant="65" id="9mF-Gc-JFO"/>
+                                </constraints>
+                                <state key="normal" image="attack"/>
+                                <connections>
+                                    <action selector="onAttackPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l9v-m1-yDR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -111,6 +119,7 @@
                             <constraint firstItem="GnW-xC-s3a" firstAttribute="centerX" secondItem="y6S-4m-c2u" secondAttribute="centerX" id="9fv-5w-Hni"/>
                             <constraint firstItem="GnW-xC-s3a" firstAttribute="centerY" secondItem="y6S-4m-c2u" secondAttribute="centerY" id="AWK-qg-imG"/>
                             <constraint firstItem="gMM-gZ-1Jf" firstAttribute="top" secondItem="eJd-32-oBP" secondAttribute="bottom" constant="3" id="Af8-JI-AbF"/>
+                            <constraint firstAttribute="trailing" secondItem="ctj-fc-hOz" secondAttribute="trailing" constant="66" id="KTw-do-Sd5"/>
                             <constraint firstItem="odF-YL-UMl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="P85-Ni-K35"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qWU-dp-Yu6" secondAttribute="bottom" id="Qfp-MW-GSY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gMM-gZ-1Jf" secondAttribute="bottom" id="T5g-G6-wiW"/>
@@ -121,6 +130,7 @@
                             <constraint firstItem="qWU-dp-Yu6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iEo-jl-7T0"/>
                             <constraint firstAttribute="trailing" secondItem="gMM-gZ-1Jf" secondAttribute="trailing" id="n7z-Ye-kzE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gMM-gZ-1Jf" secondAttribute="bottom" id="nRq-3f-L37"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ctj-fc-hOz" secondAttribute="bottom" id="rj2-oN-lPD"/>
                             <constraint firstItem="y6S-4m-c2u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="u8B-Fh-gDw"/>
                             <constraint firstItem="gMM-gZ-1Jf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uje-IE-B2Y"/>
                             <constraint firstAttribute="trailing" secondItem="hg4-vX-JJY" secondAttribute="trailing" constant="4" id="w39-wo-MLW"/>
@@ -139,6 +149,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="attackBtn" destination="ctj-fc-hOz" id="qPO-ng-6kZ"/>
                         <outlet property="chestBtn" destination="eJd-32-oBP" id="WJr-jI-dYf"/>
                         <outlet property="enemyHpLabel" destination="ggh-pN-fLs" id="M5e-fj-kRU"/>
                         <outlet property="enemyImg" destination="hg4-vX-JJY" id="R81-aF-7LL"/>

@@ -21,6 +21,10 @@ class Player: Character{
         return _inventory
     }
     
+    func addItemToInventory(item: String){
+        _inventory.append(item)
+    }
+    
     convenience init(name: String, hp: Int, attackPwr: Int) {
         //Calls initialiser from Character and pass the hp and attackPwr from this initialiser
         self.init(hp: hp, attackPwr: attackPwr)
