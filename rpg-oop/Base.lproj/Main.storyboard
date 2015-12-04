@@ -42,14 +42,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chest" translatesAutoresizingMaskIntoConstraints="NO" id="8uX-ci-HBr">
-                                <rect key="frame" x="411" y="377" width="164" height="155"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="164" id="8lV-EU-Pot"/>
-                                    <constraint firstAttribute="height" constant="155" id="fb7-w8-b4F"/>
-                                </constraints>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="player" translatesAutoresizingMaskIntoConstraints="NO" id="odF-YL-UMl">
                                 <rect key="frame" x="28" y="346" width="153" height="184"/>
                                 <animations/>
@@ -58,6 +50,18 @@
                                     <constraint firstAttribute="width" constant="153" id="xov-kS-Q5C"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJd-32-oBP" userLabel="chectBtn">
+                                <rect key="frame" x="457" y="426" width="94" height="104"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="94" id="New-Ja-urz"/>
+                                    <constraint firstAttribute="height" constant="104" id="lxd-Di-gif"/>
+                                </constraints>
+                                <state key="normal" image="chest"/>
+                                <connections>
+                                    <action selector="onChestTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hnD-1f-S6B"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enem1" translatesAutoresizingMaskIntoConstraints="NO" id="hg4-vX-JJY">
                                 <rect key="frame" x="361" y="339" width="235" height="193"/>
                                 <animations/>
@@ -66,7 +70,7 @@
                                     <constraint firstAttribute="width" constant="235" id="lKV-jK-Wz4"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnW-xC-s3a">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player attacked Wild Chimera!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnW-xC-s3a">
                                 <rect key="frame" x="140" y="48" width="321" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -102,21 +106,21 @@
                             <constraint firstAttribute="trailing" secondItem="gMM-gZ-1Jf" secondAttribute="trailing" id="766-9o-ggM"/>
                             <constraint firstItem="GnW-xC-s3a" firstAttribute="centerX" secondItem="y6S-4m-c2u" secondAttribute="centerX" id="9fv-5w-Hni"/>
                             <constraint firstItem="GnW-xC-s3a" firstAttribute="centerY" secondItem="y6S-4m-c2u" secondAttribute="centerY" id="AWK-qg-imG"/>
+                            <constraint firstItem="gMM-gZ-1Jf" firstAttribute="top" secondItem="eJd-32-oBP" secondAttribute="bottom" constant="3" id="Af8-JI-AbF"/>
                             <constraint firstItem="odF-YL-UMl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="P85-Ni-K35"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qWU-dp-Yu6" secondAttribute="bottom" id="Qfp-MW-GSY"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gMM-gZ-1Jf" secondAttribute="bottom" id="T5g-G6-wiW"/>
-                            <constraint firstAttribute="trailing" secondItem="8uX-ci-HBr" secondAttribute="trailing" constant="25" id="Vpx-Pz-mY7"/>
                             <constraint firstItem="gMM-gZ-1Jf" firstAttribute="top" secondItem="hg4-vX-JJY" secondAttribute="bottom" constant="1" id="bKB-W8-3Up"/>
                             <constraint firstItem="qWU-dp-Yu6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cPe-jN-ceA"/>
                             <constraint firstItem="ggh-pN-fLs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="dFu-tx-TTe"/>
                             <constraint firstItem="vfL-wI-bID" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="28" id="g5E-KB-dfY"/>
                             <constraint firstItem="qWU-dp-Yu6" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iEo-jl-7T0"/>
-                            <constraint firstItem="gMM-gZ-1Jf" firstAttribute="top" secondItem="8uX-ci-HBr" secondAttribute="bottom" constant="1" id="iGT-ze-XD4"/>
                             <constraint firstAttribute="trailing" secondItem="gMM-gZ-1Jf" secondAttribute="trailing" id="n7z-Ye-kzE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gMM-gZ-1Jf" secondAttribute="bottom" id="nRq-3f-L37"/>
                             <constraint firstItem="y6S-4m-c2u" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="u8B-Fh-gDw"/>
                             <constraint firstItem="gMM-gZ-1Jf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uje-IE-B2Y"/>
                             <constraint firstAttribute="trailing" secondItem="hg4-vX-JJY" secondAttribute="trailing" constant="4" id="w39-wo-MLW"/>
+                            <constraint firstAttribute="trailing" secondItem="eJd-32-oBP" secondAttribute="trailing" constant="49" id="x8c-dD-0SJ"/>
                             <constraint firstItem="vfL-wI-bID" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="xfv-tv-xa1"/>
                             <constraint firstItem="gMM-gZ-1Jf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="yLh-rw-TSV"/>
                             <constraint firstItem="y6S-4m-c2u" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zgb-QC-JRt"/>
@@ -130,10 +134,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="chestBtn" destination="eJd-32-oBP" id="WJr-jI-dYf"/>
+                        <outlet property="enemyHpLabel" destination="ggh-pN-fLs" id="M5e-fj-kRU"/>
+                        <outlet property="enemyImg" destination="hg4-vX-JJY" id="R81-aF-7LL"/>
+                        <outlet property="playerHpLabel" destination="vfL-wI-bID" id="tDy-ue-erf"/>
+                        <outlet property="printLabel" destination="GnW-xC-s3a" id="i82-Bw-gdn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="274" y="374"/>
+            <point key="canvasLocation" x="316" y="386"/>
         </scene>
     </scenes>
     <resources>
